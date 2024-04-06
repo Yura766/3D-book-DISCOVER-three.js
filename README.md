@@ -42,6 +42,59 @@ figure > cube this project:
 Кожен об’єкт, за допомогою якого ми можемо додати до сцени, scene.addмає ці властивості
 
 
+Додавати нову модель можна до любої сцени як світової так і отримати об'єкттну 
+// A starts at (0,0,0) in world space
+scene.add(meshA);
+
+// B starts at (0,0,0) in A's local space
+meshA.add(meshB);
+
+meshA.position.x = 5;
+
+meshB.position.x = 3;
+
+
+
+Положення об'єкта наX-вісь, яку назвемо X.
+Положення об'єкта наY-вісь, яку назвемо Y.
+Положення об'єкта наZ-вісь, яку назвемо Z.
+Ми можемо записати ці три позиції у вигляді впорядкованого списку чисел:( x ,y ,z ).
+
+
+
+1.6 згладжування ( AA ).
+
+в цій статті є рендеринг сцени і при змінні ширини/висоти об'екта 
+і
+фікс коли об'єкт міняється свій розмір непропорціонально   
+
+![нерівності при маштабуванні](https://discoverthreejs.com/images/first-steps/antialias.svg)
+
+Увімкнути згладжування 
+  const renderer = new WebGLRenderer({ antialias: true });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,6 +107,7 @@ figure > cube this project:
 
 
 Замітки:
+- .position, .rotation, .scale
 
 - можна обекту задати
 
@@ -71,4 +125,4 @@ figure > cube this project:
   // equivalent to:
   // cube.scale.set(1.25, 0.25, 0.5);
 
-![Логотип](https://discoverthreejs.com/images/first-steps/coordinate_system_simple.svg)
+![Позиції в просторі](https://discoverthreejs.com/images/first-steps/coordinate_system_simple.svg)

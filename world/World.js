@@ -25,13 +25,15 @@ class World {
 
         const light = createLights();
         const cube = createCube();
-        scene.add(cube,light);
+        scene.add(cube, light);
 
         const resizer = new Resizer(container, camera, renderer);
+        resizer.onResize = () => {
+            this.render();
+        };
     }
 
     render() {
-        console.log(this.container);
 
         // // render, or 'create a still image', of the scene
         renderer.render(scene, camera);
